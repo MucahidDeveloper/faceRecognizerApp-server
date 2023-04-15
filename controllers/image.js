@@ -1,7 +1,10 @@
 const Clarifai = require("clarifai");
 
-const app = new Clarifai.App({
-  apiKey: "13a944fcde2c49ce91b1c44e38d12593",
+const app = knex({
+  client: "Clarifai",
+  connection: {
+  apiKey: "process.env.API_clarifai",
+  },
 });
 
 const handleApiCall = (req, res) => {
